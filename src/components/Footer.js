@@ -1,21 +1,23 @@
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import YouTubeIcon from "@material-ui/icons/YouTube";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import styled from "styled-components";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import FacebookIcon from "@material-ui/icons/Facebook";
+
+const Border = styled.div`
+  border-top: 0.1px solid #dddddd;
+  margin: 4rem 15px 0;
+`;
 
 const Container = styled.div`
-  background-color: #fff;
-  margin-top: 1rem;
-  padding: 2rem 0 2rem;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  background-color: #f7f7f7;
+  padding: 1rem 15px 1rem;
   a {
-    color: #787c7b;
+    color: #6e6e6e;
     text-decoration: none;
     &:hover {
-      color: #787c7b;
+      color: #6e6e6e;
       transition: all 0.4s ease-in;
     }
   }
@@ -23,6 +25,7 @@ const Container = styled.div`
 
 const Paragraph = styled.div`
   width: 80%;
+  padding: 1rem 0 1rem;
   margin: 0 auto;
   display: flex;
 `;
@@ -34,22 +37,36 @@ const Line = styled.p`
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
-  color: #787c7b;
+  color: #6e6e6e;
   a {
-    color: #787c7b;
+    color: #6e6e6e;
     text-decoration: none;
     &:hover {
-      color: #787c7b;
+      color: #6e6e6e;
       transition: all 0.4s ease-in;
     }
   }
 `;
 
-const CopyRight = styled.p`
-  font-size: 8px;
-  color: #808080;
+const Links = styled.div`
+  display: flex;
+  margin: 0 auto;
   text-align: center;
-  margin: 1.5rem auto 1rem;
+  text-decoration: none;
+  color: #6e6e6e;
+  width: 200px;
+  a {
+    color: #6e6e6e;
+    text-decoration: none;
+    &:hover {
+      color: #6e6e6e;
+      transition: all 0.4s ease-in;
+    }
+  }
+`;
+
+const A = styled.a`
+  width: 200px;
 `;
 
 const Footer = () => {
@@ -57,22 +74,33 @@ const Footer = () => {
 
   return (
     <>
+      <Border></Border>
       <Container>
         <Paragraph>
           <Line>
             <Link href="/">
-              <a>トップ</a>
+              <a>Top</a>
             </Link>
           </Line>
           <Line>
-            <Link href="/about">
-              <a>企業概要</a>
+            <Link href="/#About">
+              <a>About</a>
             </Link>
           </Line>
         </Paragraph>
-        <CopyRight>
-          Copyright © 2020 Shangri-La Inc. All Rights Reserved.
-        </CopyRight>
+        <Paragraph>
+          <Links>
+            <A
+              href="https://github.com/konishiyama/Alpha_Translate"
+              target="_blank"
+            >
+              <GitHubIcon></GitHubIcon>
+            </A>
+            <A href="https://www.facebook.com/ko.nishiyama" target="_blank">
+              <FacebookIcon></FacebookIcon>
+            </A>
+          </Links>
+        </Paragraph>
       </Container>
     </>
   );

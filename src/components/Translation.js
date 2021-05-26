@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ReactCountryFlag from "react-country-flag";
 
 const Container = styled.div``;
 
@@ -14,50 +15,25 @@ const Title = styled.p`
   padding: 3px;
 `;
 
-const TEXTAREACONTAINER = styled.div`
-  display: block;
-  width: 100%;
-  height: 172px;
-  min-height: 25vh !important;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  padding: 8px;
-  font-size: 14px;
-  margin-bottom: 18px;
-  border-radius: 4px;
-  background: #fff;
-  border: none;
-  box-shadow: 0px 8px 32px rgb(0 0 0 / 8%) !important;
-`;
-
-const TEXTAREA = styled.textarea`
-  display: block;
-  width: 100%;
-  height: 8rem;
-  padding: 8px;
-  font-size: 14px;
-  margin-bottom: 18px;
-  border-radius: 4px;
-  border: none;
-  box-shadow: none;
-`;
-
-const Form = styled.form`
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: left;
-`;
-
 const Translate = () => {
   return (
     <>
       <Container>
-        <Form name="translate" method="post" action="/predict">
-          <SubContainer1>
-            <Title>Translated into English</Title>
-          </SubContainer1>
-          <TEXTAREACONTAINER></TEXTAREACONTAINER>
-        </Form>
+        <SubContainer1>
+          <Title>
+            Translated into
+            <ReactCountryFlag
+              className="emojiFlag"
+              countryCode="US"
+              style={{
+                fontSize: "1.5em",
+                lineHeight: "1.5em",
+                marginLeft: "0.2em",
+              }}
+              aria-label="United States"
+            />
+          </Title>
+        </SubContainer1>
       </Container>
     </>
   );
