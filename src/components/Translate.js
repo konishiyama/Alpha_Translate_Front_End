@@ -15,12 +15,11 @@ const Translate = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post(`http://127.0.0.1:5000/predict`, { inputValues })
+      .post(`https://alpha-translate.herokuapp.com/predict`, { inputValues })
       .then((res) => {
         setTranslatedText({
           translated_text: res.data["translation"],
         });
-        // alert(res.data['translation']);
       })
       .catch((error) => {
         setErrorMessage(error.message);
